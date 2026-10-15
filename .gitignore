@@ -20,6 +20,8 @@ pnpm-debug.log*
 .env.production.local
 
 # Build output
+dist/
+dist-ssr/
 universe/dist/
 universe/dist-ssr/
 universe/.tmp/

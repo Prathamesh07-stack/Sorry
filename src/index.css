@@ -1,0 +1,81 @@
+/* ==========================================================
+   A LITTLE UNIVERSE FOR SID — Global Styles
+   ========================================================== */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --midnight: #0a0a1a;
+  --deep-navy: #0d0d2b;
+  --navy: #111132;
+  --lavender-dark: #1e1b4b;
+  --purple: #2d1b69;
+  --soft-purple: #7c3aed;
+  --lavender: #a78bfa;
+  --pale-lavender: #c4b5fd;
+  --dusty-purple: #9d84c9;
+  --peach: #fcd5b5;
+  --warm-peach: #fdba74;
+  --sunrise-gold: #fbbf24;
+  --pale-gold: #fef3c7;
+  --rose: #fda4af;
+  --text-primary: #f1f0ff;
+  --text-secondary: #c4b5fd;
+  --text-muted: #6b5b9e;
+  --glass: rgba(255,255,255,0.05);
+  --glass-border: rgba(255,255,255,0.1);
+  --font-display: 'Playfair Display', serif;
+  --font-body: 'Inter', sans-serif;
+  --font-hand: 'Caveat', cursive;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--font-body);
+  background: var(--midnight);
+  color: var(--text-primary);
+  min-height: 100vh;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: var(--midnight); }
+::-webkit-scrollbar-thumb { background: var(--soft-purple); border-radius: 2px; }
+
+/* Focus */
+:focus-visible {
+  outline: 2px solid var(--lavender);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* Typography */
+h1, h2, h3, h4 { font-family: var(--font-display); font-weight: 700; line-height: 1.15; }
+p { line-height: 1.8; }
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Utility */
+.sr-only {
+  position: absolute; width: 1px; height: 1px; padding: 0;
+  margin: -1px; overflow: hidden; clip: rect(0,0,0,0);
+  white-space: nowrap; border-width: 0;
+}

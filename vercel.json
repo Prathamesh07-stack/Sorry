@@ -1,5 +1,0 @@
-{
-  "buildCommand": "cd universe && npm install && npm run build",
-  "outputDirectory": "universe/dist",
-  "framework": "vite"
-}

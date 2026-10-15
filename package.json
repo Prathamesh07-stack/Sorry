@@ -1,19 +1,27 @@
 {
-  "name": "a-little-universe-for-sid",
-  "version": "1.0.0",
-  "description": "An interactive, cinematic, animated best-friend apology website dedicated to Sid",
+  "name": "universe",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
   "scripts": {
-    "dev": "npm --prefix universe run dev",
-    "build": "cd universe && npm install && npm run build",
-    "preview": "npm --prefix universe run preview"
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "lint": "oxlint",
+    "preview": "vite preview"
   },
-  "keywords": [
-    "apology",
-    "interactive",
-    "react",
-    "framer-motion",
-    "vite"
-  ],
-  "author": "",
-  "license": "ISC"
+  "dependencies": {
+    "framer-motion": "^14.2.0",
+    "lucide-react": "^1.57.0",
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8"
+  },
+  "devDependencies": {
+    "@types/node": "^24.13.3",
+    "@types/react": "^19.2.18",
+    "@types/react-dom": "^19.2.7",
+    "@vitejs/plugin-react": "^6.1.1",
+    "oxlint": "^1.81.0",
+    "typescript": "~6.0.2",
+    "vite": "^8.3.0"
+  }
 }

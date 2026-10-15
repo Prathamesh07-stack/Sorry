@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>For Sid 💗 — I'm So Sorry</title>
+  <meta name="description" content="A heartfelt apology, just for Sid." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <canvas id="petalCanvas"></canvas>
+  <div class="stars-bg" id="starsBg" aria-hidden="true"></div>
+
+  <!-- MUSIC PLAYER -->
+  <div class="music-player" id="musicPlayer">
+    <button class="music-btn" id="musicBtn" aria-label="Toggle music">
+      <span class="music-icon" id="musicIcon">🎵</span>
+      <span class="music-bars" id="musicBars" aria-hidden="true">
+        <span></span><span></span><span></span><span></span>
+      </span>
+    </button>
+    <span class="music-label">lo-fi for you</span>
+  </div>
+
+  <!-- Embedded audio (royalty free lo-fi style using Web Audio API synth) -->
+  <audio id="bgMusic" loop preload="none">
+    <!-- We'll generate audio via Web Audio API -->
+  </audio>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero" id="hero">
+    <canvas id="heroParticles"></canvas>
+    <div class="hero-inner">
+      <div class="hero-greeting">
+        <span class="reveal-char" style="--ci:0">h</span><span class="reveal-char" style="--ci:1">e</span><span class="reveal-char" style="--ci:2">y</span><span class="reveal-char" style="--ci:3">,</span>
+      </div>
+      <h1 class="hero-name" id="heroName">
+        <span class="name-s">S</span><span class="name-i">i</span><span class="name-d">d</span>
+      </h1>
+      <p class="hero-tagline" id="heroTagline"></p>
+      <a href="#letter" class="scroll-btn" id="scrollBtn">
+        <span>open your heart</span>
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><path d="M8 3v10M3 9l5 5 5-5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </div>
+    <div class="hero-orb orb-1" aria-hidden="true"></div>
+    <div class="hero-orb orb-2" aria-hidden="true"></div>
+    <div class="hero-orb orb-3" aria-hidden="true"></div>
+  </section>
+
+  <!-- ===== LETTER ===== -->
+  <section class="letter-section" id="letter">
+    <div class="letter-envelope reveal">
+      <div class="envelope-flap"></div>
+      <div class="envelope-body">
+        <div class="letter-card">
+          <div class="letter-wax-seal">💌</div>
+          <p class="letter-date">October 2026</p>
+          <p class="letter-salutation">Dear Sid,</p>
+          <div class="letter-body" id="letterBody">
+            <!-- typed by JS -->
+          </div>
+          <p class="letter-closing" id="letterClosing" style="opacity:0;transition:opacity 0.8s ease 0.3s">
+            Your biggest fan,<br/>
+            <span class="letter-sign">PT 💗</span>
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== GIFTS ===== -->
+  <section class="gifts-section" id="gifts">
+    <div class="gifts-header reveal">
+      <p class="gifts-label">a little something for you</p>
+      <h2 class="gifts-title">Your Gifts 🎁</h2>
+    </div>
+    <div class="gifts-grid">
+      <div class="gift-box reveal" style="--gdelay:0s" id="gift1">
+        <div class="gift-lid" id="lid1"><span class="gift-bow">🎀</span></div>
+        <div class="gift-content">
+          <div class="gift-img-wrap">
+            <img src="ferrero.jpg" alt="Ferrero Rocher chocolates" class="gift-img" loading="lazy" />
+            <div class="gift-shine"></div>
+          </div>
+          <div class="gift-label-box">
+            <span class="gift-emoji">🍫</span>
+            <h3 class="gift-name">Ferrero Rocher</h3>
+            <p class="gift-desc">because you deserve the best kind of sweet things in life 🤎</p>
+          </div>
+        </div>
+      </div>
+      <div class="gift-box reveal" style="--gdelay:0.15s" id="gift2">
+        <div class="gift-lid" id="lid2"><span class="gift-bow">🎀</span></div>
+        <div class="gift-content">
+          <div class="gift-img-wrap">
+            <img src="flowers.jpg" alt="Flower bouquet" class="gift-img" loading="lazy" />
+            <div class="gift-shine"></div>
+          </div>
+          <div class="gift-label-box">
+            <span class="gift-emoji">🌸</span>
+            <h3 class="gift-name">Flowers for You</h3>
+            <p class="gift-desc">every petal here is basically me saying sorry in different shades of pink 🌷</p>
+          </div>
+        </div>
+      </div>
+      <div class="gift-box reveal" style="--gdelay:0.3s" id="gift3">
+        <div class="gift-lid" id="lid3"><span class="gift-bow">🎀</span></div>
+        <div class="gift-content">
+          <div class="gift-img-wrap">
+            <img src="card.jpg" alt="Handwritten sorry card" class="gift-img" loading="lazy" />
+            <div class="gift-shine"></div>
+          </div>
+          <div class="gift-label-box">
+            <span class="gift-emoji">💌</span>
+            <h3 class="gift-name">A Card From Me</h3>
+            <p class="gift-desc">straight from the heart, in actual handwriting — well, kinda 🥺</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FORGIVE ===== -->
+  <section class="forgive-section" id="forgive">
+    <div class="forgive-inner reveal">
+      <div class="forgive-emoji-row">🥺</div>
+      <h2 class="forgive-title">so… are we good?</h2>
+      <p class="forgive-sub">One tap is all I'm asking for 😅</p>
+      <button class="forgive-btn" id="forgiveBtn">
+        <span class="btn-text">yeah we're good 💗</span>
+      </button>
+    </div>
+  </section>
+
+  <!-- ===== REPLY SECTION ===== -->
+  <section class="reply-section" id="replySection" style="display:none">
+    <div class="reply-inner reveal" id="replyInner">
+      <div class="reply-header">
+        <span class="reply-icon">💌</span>
+        <h2 class="reply-title">say something back?</h2>
+        <p class="reply-sub">I'd love to hear from you — anything at all 🥹</p>
+      </div>
+      <div class="reply-box">
+        <textarea class="reply-textarea" id="replyTextarea" placeholder="type here, Sid… 💗" maxlength="500" rows="5"></textarea>
+        <div class="reply-counter"><span id="replyCount">0</span>/500</div>
+      </div>
+      <div class="reply-actions">
+        <button class="reply-send-btn" id="replySendBtn">send it 💌</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== REPLY SENT ===== -->
+  <div class="reply-sent-overlay" id="replySentOverlay" aria-hidden="true">
+    <div class="reply-sent-card">
+      <div class="rs-emoji">🥹</div>
+      <h2 class="rs-title">got it, Sid 💗</h2>
+      <p class="rs-text" id="rsText"></p>
+      <p class="rs-note">PT is going to cry reading this. Thank you. 🌸</p>
+      <button class="rs-close" id="rsClose">💕 close</button>
+    </div>
+  </div>
+
+  <!-- ===== THANK YOU OVERLAY ===== -->
+  <div class="thankyou-overlay" id="thankYouOverlay" aria-hidden="true">
+    <canvas class="confetti-canvas" id="confettiCanvas"></canvas>
+    <div class="thankyou-card">
+      <div class="ty-emoji-big">🥹</div>
+      <h2 class="ty-title">YESSS thank you Sid!!! 💗</h2>
+      <p class="ty-text">Okay I literally felt that. Thank you for being you and for giving me another chance. I promise I won't waste it. You're the absolute best. 🌸</p>
+      <button class="forgive-btn ty-action-btn" id="tyActionBtn">
+        <span class="btn-text">write something to PT 💌</span>
+      </button>
+      <button class="ty-close-btn" id="tyCloseBtn">maybe later 💕</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

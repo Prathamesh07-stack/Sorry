@@ -1,0 +1,19 @@
+{
+  "name": "a-little-universe-for-sid",
+  "version": "1.0.0",
+  "description": "An interactive, cinematic, animated best-friend apology website dedicated to Sid",
+  "scripts": {
+    "dev": "npm --prefix universe run dev",
+    "build": "cd universe && npm install && npm run build",
+    "preview": "npm --prefix universe run preview"
+  },
+  "keywords": [
+    "apology",
+    "interactive",
+    "react",
+    "framer-motion",
+    "vite"
+  ],
+  "author": "",
+  "license": "ISC"
+}
